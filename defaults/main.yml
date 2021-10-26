@@ -1,0 +1,9 @@
+---
+administrator: SALEM M-Y
+my_ansible_user: admin
+
+instance:
+  name: WebApp
+  port: 8080
+  name_directory: webApp
+  title_html: "Yamine"

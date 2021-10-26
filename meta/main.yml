@@ -1,0 +1,6 @@
+---
+galaxy_info:
+  role_name: webapp_role
+  author: SALEM M-Yamine
+  description: Ansible webApp role
+  company: Ensup 

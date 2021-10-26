@@ -1,0 +1,18 @@
+---
+namespace: community
+name: webapp-y-role
+version: 1.0.0
+readme: README.md
+authors:
+  - Yamine SALEM
+description: Install webapp
+license_file: COPYING
+tags:
+  - v1
+repository: https://github.com/yamine99/webapp-y.git
+documentation: https://github.com/yamine99/webapp-y.git
+homepage: https://github.com/yamine99/webapp-y.git
+issues: https://github.com/yamine99/webapp-y.git
+build_ignore:
+  - .gitignore
+ 

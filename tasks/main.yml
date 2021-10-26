@@ -1,0 +1,30 @@
+- name: set variable instance
+  set_fact:
+    name: "{{ instance.name }}"
+    title_html : "{{ instance.title_html }}"
+    name_directory : "{{ instance.name_directory }}"
+    
+- name: "Create directory {{ name_directory }}"
+  file:
+    path: /home/{{ ansible_user }}/{{ name_directory }}
+    state: directory
+    
+- name: "Download data from git repo"
+  git:
+    repo: 'https://github.com/diranetafen/static-website-example.git'
+    dest: /home/{{ ansible_user }}/webapp
+
+- name: "Copy new template"
+  template: 		
+    src: index.html.j2
+    dest: /home/{{ ansible_user }}/webapp/index.html
+
+- name: "launch docker container"
+  docker_container:
+    name: "{{ instance.name }}"
+    image: httpd
+    ports: 
+      - "{{ instance.port }}":"80"
+    volumes:
+      - /home/{{ ansible_user }}/webapp/:/usr/local/apache2/htdocs/:rw
+ 
